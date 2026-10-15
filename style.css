@@ -1,0 +1,381 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f1fa;
+    color: #29334c;
+    padding: 30px 16px;
+}
+
+.calendar-page {
+    max-width: 1000px;
+    width: 100%;
+    margin: auto;
+}
+
+.calendar-header {
+    text-align: center;
+    padding: 10px 10px 30px;
+}
+
+.flower {
+    font-size: 35px;
+    color: #bd7da1;
+}
+
+.subtitle,
+.month-label {
+    color: #9b7aa7;
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.calendar-header h1 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(34px, 6vw, 52px);
+    margin: 10px 0;
+}
+
+.calendar-header h1 span {
+    color: #bd7da1;
+}
+
+.tagline {
+    color: #85859b;
+    font-size: 14px;
+}
+
+.calendar-card {
+    background: white;
+    border: 1px solid #e9e3f0;
+    border-radius: 18px;
+    padding: 25px;
+    box-shadow: 0 15px 40px rgba(64, 48, 87, 0.08);
+}
+
+.calendar-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 25px;
+}
+
+.calendar-top h2 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 27px;
+    margin-top: 5px;
+}
+
+.month-badge {
+    width: 58px;
+    height: 65px;
+    border-radius: 12px;
+    background: #f7eaf1;
+    color: #ad668d;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    letter-spacing: 1px;
+}
+
+.month-badge strong {
+    font-size: 22px;
+}
+
+.weekday-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+.weekday-grid div {
+    text-align: center;
+    padding: 12px 2px;
+    background: #f5f2fa;
+    border-radius: 8px;
+    color: #77728d;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.days-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-auto-rows: 90px;
+    gap: 8px;
+    position: relative;
+}
+
+.day-box {
+    position: relative;
+    min-width: 0;
+    background: #fcfbfe;
+    border: 1px solid #eeeaf4;
+    border-radius: 10px;
+    padding: 11px;
+}
+
+.day-box:hover {
+    border-color: #c69ab7;
+    background: #fbf4f8;
+}
+
+.day-number {
+    font-size: 15px;
+    font-weight: bold;
+    color: #41435d;
+}
+
+.day-note {
+    display: block;
+    margin-top: 12px;
+    color: #9b7aa7;
+    font-size: 10px;
+}
+
+.empty {
+    background: transparent;
+    border: none;
+}
+
+.weekend {
+    background: #faf7fc;
+}
+
+.event-day {
+    background: #f7f1ff;
+    border-color: #e4d6f7;
+}
+
+.calendar-event {
+    z-index: 2;
+    border-radius: 7px;
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.exam-event {
+    grid-column: 1 / span 3;
+    grid-row: 3;
+    align-self: end;
+    height: 30px;
+    margin: 0 5px 7px;
+    background: #e5dafa;
+    color: #6b4d9a;
+}
+
+
+.today {
+    background: #293b60;
+    border-color: #293b60;
+}
+
+.today .day-number {
+    color: white;
+    font-size: 19px;
+}
+
+.today-label {
+    display: block;
+    font-size: 8px;
+    color: #e6c8f5;
+    letter-spacing: 1px;
+    margin-bottom: 9px;
+    font-weight: bold;
+}
+
+.holiday-event {
+    grid-column: 2;
+    grid-row: 5 / span 2;
+    background: #e4f3e9;
+    border: 1px solid #c4e4d0;
+    color: #367c58;
+    flex-direction: column;
+    justify-content: center;
+    gap: 8px;
+    text-align: center;
+}
+
+.holiday-event span {
+    font-size: 22px;
+}
+
+.holiday-event strong {
+    font-size: 12px;
+}
+
+.holiday-event small {
+    font-size: 9px;
+    font-weight: normal;
+}
+
+
+.calendar-legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 22px;
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px solid #eeeaf4;
+}
+
+.calendar-legend div {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #77728d;
+    font-size: 11px;
+}
+
+.legend-dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 3px;
+}
+
+.purple {
+    background: #b79add;
+}
+
+.green {
+    background: #85c79e;
+}
+
+.blue {
+    background: #293b60;
+}
+
+
+.calendar-footer {
+    text-align: center;
+    padding: 25px 10px 5px;
+    color: #918ba3;
+    font-size: 12px;
+}
+
+.calendar-footer span {
+    color: #d67a9c;
+}
+
+
+@media screen and (max-width: 600px) {
+    body {
+        padding: 15px 6px;
+    }
+
+    .calendar-card {
+        padding: 10px 5px;
+        border-radius: 12px;
+    }
+
+    .calendar-top {
+        padding: 0 5px;
+        margin-bottom: 18px;
+    }
+
+    .calendar-top h2 {
+        font-size: 22px;
+    }
+
+    .weekday-grid,
+    .days-grid {
+        gap: 4px;
+    }
+
+    .weekday-grid div {
+        font-size: 10px;
+        padding: 10px 0;
+    }
+
+    .days-grid {
+        grid-auto-rows: 65px;
+    }
+
+    .day-box {
+        padding: 6px 4px;
+        border-radius: 7px;
+    }
+
+    .day-number {
+        font-size: 12px;
+    }
+
+    .day-note {
+        font-size: 8px;
+        margin-top: 7px;
+    }
+
+    .today-label {
+        font-size: 6px;
+        letter-spacing: 0;
+        margin-bottom: 6px;
+    }
+
+    .today .day-number {
+        font-size: 15px;
+    }
+
+    .calendar-event {
+        font-size: 8px;
+        padding: 3px;
+    }
+
+    .exam-event {
+        height: 23px;
+        margin: 0 2px 5px;
+    }
+
+    .holiday-event {
+        gap: 4px;
+    }
+
+    .holiday-event span {
+        font-size: 16px;
+    }
+
+    .holiday-event strong {
+        font-size: 9px;
+    }
+
+    .holiday-event small {
+        font-size: 7px;
+    }
+
+    .calendar-legend {
+        gap: 10px;
+        margin-top: 18px;
+        padding: 15px 4px 4px;
+    }
+
+    .calendar-legend div {
+        font-size: 9px;
+        gap: 4px;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .days-grid {
+        grid-auto-rows: 55px;
+        gap: 3px;
+    }
+
+    .day-box {
+        padding: 4px 2px;
+    }
+
+    .exam-event {
+        font-size: 7px;
+    }
+}
